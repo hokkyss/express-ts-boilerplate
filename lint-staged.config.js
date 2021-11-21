@@ -1,4 +1,3 @@
 module.exports = {
-    '**/*.(ts|js)?(x)': (filenames) => `npm run lint ${filenames.join(' ')}`,
-  }
-  
+  '**/*.(ts|js)?(x)': (filenames) => `npm run lint ${filenames.join(' ')}`,
+}

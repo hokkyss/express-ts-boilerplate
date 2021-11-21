@@ -7,5 +7,3 @@ export const FORBIDDEN = { error: 'Forbidden' }
 export const INTERNAL_SERVER_ERROR = {
   error: 'Internal server error!',
 }
-
-export const COOKIE = 'AnmaToken'

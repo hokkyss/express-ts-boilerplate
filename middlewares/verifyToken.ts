@@ -1,10 +1,13 @@
 import jwt from 'jsonwebtoken'
 import { RequestHandler } from 'express'
 
-import { UNAUTHORIZED_MESSAGE, COOKIE } from '../constant'
+import { UNAUTHORIZED_MESSAGE } from '../constant'
 
 export const verifyToken: RequestHandler = (req, res, next) => {
-  const token: string = req.cookies[COOKIE]
+  const token: string | undefined = req.headers.authorization?.replace(
+    'Bearer ',
+    ''
+  )
 
   if (token) {
     if (process.env.SECRET) {
