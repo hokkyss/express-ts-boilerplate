@@ -5,7 +5,7 @@
   "compilerOptions": {
     "target": "ES5",
     "lib": ["ESNext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,7 +22,7 @@
     "outDir": "build",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["**/*.ts", "**/*.js"],
+  "include": ["**/*.ts"],
   "exclude": [
     "node_modules/*",
     "lint-staged.config.js",

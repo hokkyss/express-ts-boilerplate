@@ -1,4 +1,4 @@
-import { RequestHandler } from 'express'
+import type { RequestHandler } from 'express'
 import createHttpError from 'http-errors'
 import ErrorCodes from '../constants/error.constant'
 import { extractJwtFromHeader, verify } from '../utils/jwt.util'
