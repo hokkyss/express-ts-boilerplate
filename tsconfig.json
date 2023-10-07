@@ -19,7 +19,7 @@
     "strict": true,
     "target": "ES5"
   },
-  "exclude": ["node_modules/*", "build/**/*"],
+  "exclude": ["node_modules/*", "build/**/*", "**/*.txt"],
   "include": ["**/*.ts", "**/*.js", "**/*.json"],
   "ts-node": {
     "files": true
