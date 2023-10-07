@@ -32,8 +32,10 @@
         "plugin:perfectionist/recommended-natural",
         "plugin:prettier/recommended"
       ],
+      "plugins": ["@typescript-eslint", "prettier", "perfectionist"],
       "rules": {
         "no-console": "error",
+        "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": [
           "error",
           {
@@ -45,7 +47,24 @@
         "@typescript-eslint/no-var-requires": ["off"],
         "no-unreachable": ["error"],
         "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
-        "max-params": ["error", 4]
+        "max-params": ["error", 4],
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            "groups": [
+              "side-effect",
+              ["type", "builtin-type", "external-type"],
+              "internal-type",
+              "parent-type",
+              "sibling-type",
+              ["builtin", "external"],
+              "internal",
+              "parent",
+              "sibling",
+              "unknown"
+            ]
+          }
+        ]
       }
     },
     {
@@ -62,11 +81,36 @@
         "plugin:perfectionist/recommended-natural",
         "plugin:prettier/recommended"
       ],
+      "plugins": ["prettier", "perfectionist"],
       "rules": {
         "no-console": "error",
-        "no-unused-vars": "error",
+        "no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "destructuredArrayIgnorePattern": "^_"
+          }
+        ],
         "no-unreachable": "error",
-        "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+        "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+        "perfectionist/sort-imports": [
+          "error",
+          {
+            "groups": [
+              "side-effect",
+              ["type", "builtin-type", "external-type"],
+              "internal-type",
+              "parent-type",
+              "sibling-type",
+              ["builtin", "external"],
+              "internal",
+              "parent",
+              "sibling",
+              "unknown"
+            ]
+          }
+        ]
       }
     }
   ]
