@@ -1,7 +1,8 @@
 enum ErrorCodes {
-  InternalServerError = 'Internal Server Error',
-  NotFound = 'Not Found!',
-  Unauthorized = 'Unauthorized!',
+  InternalServerError = 'common/internal-server-error',
+  InvalidCredentials = 'auth/invalid-credentials',
+  NotFound = 'common/not-found',
+  Unauthorized = 'auth/unauthorized',
   // TODO: add more codes, e.g. "user/not-found", "tags/bad-request", etc
 }
 
