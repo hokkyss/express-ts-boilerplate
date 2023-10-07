@@ -1,33 +1,27 @@
 {
-  "ts-node": {
-    "files": true
-  },
   "compilerOptions": {
-    "target": "ES5",
-    "lib": ["ESNext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ESNext"],
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "sourceMap": true,
-    "isolatedModules": true,
-    "allowUnreachableCode": false,
+    "noEmit": false,
     "outDir": "build",
-    "allowSyntheticDefaultImports": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES5"
   },
-  "include": ["**/*.ts"],
-  "exclude": [
-    "node_modules/*",
-    "lint-staged.config.js",
-    ".eslintrc",
-    ".prettierrc",
-    "build/**/*"
-  ]
+  "exclude": ["node_modules/*", "build/**/*"],
+  "include": ["**/*.ts", "**/*.js", "**/*.json"],
+  "ts-node": {
+    "files": true
+  }
 }

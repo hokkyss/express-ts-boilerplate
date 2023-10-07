@@ -1,5 +1,5 @@
 declare namespace Express {
   interface Request {
-    foo: string
+    user: Record<string, unknown>
   }
 }

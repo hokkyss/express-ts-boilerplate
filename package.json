@@ -1,15 +1,4 @@
 {
-  "name": "hokkyss-ts-boilerplate",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "dotenv -c NODE_ENV=development nodemon server.ts",
-    "start": "dotenv -c NODE_ENV=production node --trace-warnings build/server.js",
-    "lint": "eslint . --ext js,ts",
-    "postinstall": "husky install",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
-  },
   "dependencies": {
     "apicache": "^1.6.3",
     "bcryptjs": "^2.4.3",
@@ -40,6 +29,7 @@
     "eslint": "^8.50.0",
     "eslint-config-alloy": "^5.1.2",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-jsonc": "^2.9.0",
     "eslint-plugin-perfectionist": "^2.1.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
@@ -52,5 +42,28 @@
   "engines": {
     "npm": "7.24.0",
     "yarn": "1.x"
-  }
+  },
+  "name": "hokkyss-ts-boilerplate",
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "endOfLine": "auto",
+    "printWidth": 80,
+    "quoteProps": "as-needed",
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false
+  },
+  "private": true,
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "dev": "dotenv -c NODE_ENV=development nodemon server.ts",
+    "lint": "eslint . --ext js,ts",
+    "postinstall": "husky install",
+    "start": "dotenv -c NODE_ENV=production node --trace-warnings build/server.js"
+  },
+  "version": "1.0.0"
 }
