@@ -1,5 +1,7 @@
 import type { Request } from 'express'
+
 import * as jose from 'jose'
+
 import envConfig from '../config/env.config'
 import jwtConfig from '../config/jwt.config'
 

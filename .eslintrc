@@ -29,6 +29,7 @@
         "plugin:@typescript-eslint/recommended",
         "alloy",
         "alloy/typescript",
+        "plugin:perfectionist/recommended-natural",
         "plugin:prettier/recommended"
       ],
       "rules": {
@@ -55,7 +56,12 @@
         "sourceType": "module",
         "ecmaVersion": "latest"
       },
-      "extends": ["eslint:recommended", "alloy", "plugin:prettier/recommended"],
+      "extends": [
+        "eslint:recommended",
+        "alloy",
+        "plugin:perfectionist/recommended-natural",
+        "plugin:prettier/recommended"
+      ],
       "rules": {
         "no-console": "error",
         "no-unused-vars": "error",

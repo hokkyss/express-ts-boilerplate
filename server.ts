@@ -1,8 +1,10 @@
-import cors from 'cors'
 import type { NextFunction, Request, Response } from 'express'
+
+import cors from 'cors'
 import express from 'express'
 import createHttpError from 'http-errors'
 import morgan from 'morgan'
+
 import envConfig from './config/env.config'
 import ErrorCodes from './constants/error.constant'
 

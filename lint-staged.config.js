@@ -1,4 +1,4 @@
 module.exports = {
-  '**/*.(ts|js)?(x)': (filenames) =>
+  '*.{ts,js}': (filenames) =>
     ['npm', 'run', 'lint', filenames.join(' ')].join(' '),
 }
