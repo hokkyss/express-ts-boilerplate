@@ -43,18 +43,6 @@
           "no-loops/no-loops": ["warn"],
           "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
         }
-      },
-      {
-        "files": ["**/*.js"],
-        "parser": "@babel/eslint-parser",
-        "extends": ["eslint:recommended", "plugin:prettier/recommended"],
-        "rules": {
-          "no-console": ["warn"],
-          "no-unused-vars": ["warn"],
-          "no-unreachable": ["error"],
-          "no-loops/no-loops": ["warn"],
-          "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
-        }
       }
     ]
   }

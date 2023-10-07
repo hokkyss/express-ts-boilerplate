@@ -1,35 +1,19 @@
-/* eslint-disable no-console */
-const DEV = process.env.NODE_ENV === 'development'
-
-import dotenv from 'dotenv'
-import dotenvExpand from 'dotenv-expand'
-dotenvExpand(dotenv.config({ path: '.env' }))
-
-import express from 'express'
-import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import express, { NextFunction, Request, Response } from 'express'
+import createHttpError from 'http-errors'
 import morgan from 'morgan'
-import apicache from 'apicache'
-import multer from 'multer'
+import envConfig from './config/env.config'
+import ErrorCodes from './constants/error.constant'
 
-const cache = apicache.middleware
-const app = express().use(cors())
+const app = express()
 
-app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(cookieParser())
 app.use(
   morgan(
     '[:date[clf]] - :status ":method :url HTTP/:http-version" :response-time ms'
   )
 )
-app.use(multer({ dest: 'static' }).any())
-app.use(cache('1 week'))
-app.use((req, _res, next) => {
-  req.foo = 'bar'
-  next()
-})
 app.use((_req, res, next) => {
   res
     .header('Access-Control-Allow-Headers', 'Origin, Content-type, Accept')
@@ -38,25 +22,13 @@ app.use((_req, res, next) => {
 })
 app.set('json spaces', 2)
 
-import authRoute from './routes/auth.routes'
-
-app.use('/auth', authRoute)
-
-/** Last route */
-app.use('*', (_req, res) =>
-  res.status(404).send({ error: 'Endpoint not found or method unavailable!' })
-)
-
-const PORT = process.env.PORT || 8008
-
-app.listen(PORT, () => {
-  if (DEV) {
-    console.log(
-      `Server started on port ${PORT}! Visit http://localhost:${PORT}`
-    )
-  } else {
-    console.log(`Server started on port ${PORT}!`)
+app.use((err: unknown, _req: Request, res: Response, _next: NextFunction) => {
+  if (createHttpError.isHttpError(err)) {
+    return res.status(err.statusCode).json({ details: err.message })
   }
+  return res.status(500).json({ details: ErrorCodes.InternalServerError })
 })
+
+app.listen(envConfig.port)
 
 export default app

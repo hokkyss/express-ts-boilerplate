@@ -11,6 +11,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "CommonJS",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
@@ -18,7 +20,7 @@
     "isolatedModules": true,
     "allowUnreachableCode": false,
     "outDir": "build",
-    "baseUrl": "."
+    "allowSyntheticDefaultImports": true
   },
   "include": ["**/*.ts", "**/*.js"],
   "exclude": [

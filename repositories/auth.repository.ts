@@ -1,1 +1,3 @@
-export const authRepository = {}
+class AuthRepository {}
+
+export default new AuthRepository()
