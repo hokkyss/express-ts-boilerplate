@@ -17,7 +17,7 @@ const verifyToken: RequestHandler = async (req, res, next) => {
     throw new createHttpError.Unauthorized(ErrorCodes.Unauthorized)
   }
 
-  res.locals.user = payload
+  req.user = payload
 
   next()
 }
