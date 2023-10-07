@@ -26,9 +26,9 @@
       },
       "extends": [
         "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "alloy",
         "alloy/typescript",
-        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
       ],
       "rules": {
@@ -45,6 +45,22 @@
         "no-unreachable": ["error"],
         "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
         "max-params": ["error", 4]
+      }
+    },
+    {
+      "files": ["**/*.js"],
+      "parser": "@babel/eslint-parser",
+      "parserOptions": {
+        "requireConfigFile": false,
+        "sourceType": "module",
+        "ecmaVersion": "latest"
+      },
+      "extends": ["eslint:recommended", "alloy", "plugin:prettier/recommended"],
+      "rules": {
+        "no-console": "error",
+        "no-unused-vars": "error",
+        "no-unreachable": "error",
+        "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
       }
     }
   ]

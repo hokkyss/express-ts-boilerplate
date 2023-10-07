@@ -23,6 +23,8 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/eslint-parser": "^7.22.15",
     "@types/apicache": "^1.6.3",
     "@types/bcryptjs": "^2.4.4",
     "@types/cookie-parser": "^1.4.4",

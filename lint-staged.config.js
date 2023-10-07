@@ -1,5 +1,4 @@
 module.exports = {
-  '**/*.(ts|js)?(x)': function (filenames) {
-    return ['npm', 'run', 'lint', filenames.join(' ')].join(' ')
-  },
+  '**/*.(ts|js)?(x)': (filenames) =>
+    ['npm', 'run', 'lint', filenames.join(' ')].join(' '),
 }
